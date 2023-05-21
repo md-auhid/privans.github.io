@@ -1,0 +1,627 @@
+
+
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+ /* google fonts  */
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+ @font-face {
+   font-family: 'Lato';
+   src: url('assets/fonts/Lato-Medium.ttf');
+   font-weight: 500;
+ }
+ body{
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  color: #0E254C;
+  font-size: 23px;
+ }
+.px-100{
+  padding: 0 100px;
+}
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* typography */
+h2{
+  font-size: 62px;
+  font-weight: 900;
+  color: #0E254C;
+}
+.title{
+  font-size: 62px;
+  font-weight: 900;
+  color: #0E254C;
+}
+.btn-dafult {
+  background-image: linear-gradient(to right, #11CEA6,#2ADD80);
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  position: relative;
+}
+a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.btn-dafult:after {
+  content: '';
+  display: inline-block;
+  width: 65%;
+  height: 40px;
+  background: linear-gradient(to bottom,#2ADD80,#11CEA6);
+  /* display: flex; */
+  position: absolute;
+  left: 50%;
+  top: 11px;
+  z-index: -1;
+  box-shadow: 0px 10px 20px 0px #2add80c2;
+  transform: translateX(-50%);
+}
+/* typography */
+
+/* HEADER PART START */
+header {
+  padding: 150px 0;
+  background-image: url(assets/img/background.png);
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: left top;
+}
+header .head-left-part{}
+header .head-left-part img{
+  margin-bottom: 150px;
+}
+header .head-left-part h2{
+  color: #fff;
+  margin-bottom: 30px;
+}
+header .head-left-part a{}
+header .head-right-part{}
+header .head-right-part img{}
+/* HEADER PART FINISH */
+
+/* Hai Molti Follower sui Social? PART START */
+.hmf_section{}
+.hmf_section .top-part{}
+.hmf_section .top-part .part_01 {
+  width: 400px;
+  position: relative;
+  padding: 20px 30px;
+  border-radius: 30px;
+  box-shadow: 0px 2px 16px 0 #a4a4a42e;
+  /* margin-right: 20px; */
+}
+.hmf_section .top-part .part_01 > img {
+  position: absolute;
+  left: 62%;
+  top: 100%;
+  transform: translate(-50%,-50%);
+}
+.hmf_section .top-part .part_01 .borderd-img{
+  position: relative;
+}
+.borderd-img:after {
+  content: '';
+  width: 84px;
+  height: 84px;
+  display: inline-block;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  background: linear-gradient(#D42D63,#F8B55A);
+  z-index: -1;
+  border-radius: 50px;
+}
+.hmf_section .top-part .part_01 .borderd-img img{
+  width: 77px;
+  height: 77px;
+}
+
+.hmf_section .top-part .part_01 .insta_info li {
+  padding-right: 25px;
+}
+.hmf_section .top-part .part_01 .insta_info li p {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.hmf_section .top-part .part_01 .insta_info li p:last-child {
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.hmf_section .top-part .part_02{}
+.hmf_section .top-part .part_02 .borderd-img{}
+.hmf_section .top-part .part_02 .borderd-img img{}
+.hmf_section .top-part .part_01 ul{
+  padding-left: 30px;
+}
+ul{
+  margin: 0;
+}
+.hmf_section .top-part .part_02 ul li{}
+.hmf_section .top-part .part_02 ul li p{}
+.hmf_section .top-part .part_01 ul li p span {
+  font-size: 10px;
+  display: inline-block;
+  /* padding: 5px; */
+  background: #4C81F7;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+.hmf_section .top-part .part_02 > img{}
+.hmf_section .top-part .part_01 > img.img_two {
+  right: 5px !important;
+  left: auto !important;
+  top: 20px;
+}
+.hmf_section .bottom-part {
+  margin-top: 100px;
+}
+.hmf_section .bottom-part h2{
+  margin-bottom: 0;
+}
+.hmf_section .bottom-part p {
+  margin: 30px 0;
+}
+.hmf_section .bottom-part a {
+  font-size: 34px;
+  font-weight: 900;
+  color: #fff;
+  background-image: linear-gradient(to left,#219498 -43%,#6B9DC0 16%,#B48DE0 100%);
+  /* display: block; */
+  padding: 10px 50px;
+  border-radius: 50px;
+}
+.hmf_section .bottom-part .last_img{
+  margin-top: 200px;
+}
+.hmf_section .bottom-part .last_img img{}
+/* Hai Molti Follower sui Social? PART FINISH */
+
+/* SECTION 2 Apri il tuo Canale  Privato su Privans PART START  */
+.april_il_sec{
+  background: url(assets/img/background-2nd.png) no-repeat;
+  background-size: 40%;
+  background-position: left top;
+  padding: 300px 0 300px 0;
+}
+.april_il_sec .section-2-right-part {
+  padding-left: 150px;
+}
+.april_il_sec .section-2-right-part h2{}
+.april_il_sec .section-2-right-part p {
+  margin: 30px 0;
+}
+.april_il_sec .section-2-right-part a{}
+/* SECTION 2 Apri il tuo Canale  Privato su Privans PART FINISH */
+
+/* SECTION-3 Con Privans Pubblichi, Promuovi, Chatti e Incassi PART START */
+.section-3{
+  padding-bottom: 200px;
+}
+.section-3 .main-wrap-in-sec_3 {
+  padding: 150px 50px;
+  background: url('assets/img/background_3.png') no-repeat;
+  background-size: cover;
+  background-position: left top;
+  border-radius: 40px;
+}
+.section-3 .main-wrap-in-sec_3 .top-part{}
+.section-3 .main-wrap-in-sec_3 .top-part h2 {  
+  padding: 0 260px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+.section-3 .main-wrap-in-sec_3 .bottom-part{}
+.section-3 .main-wrap-in-sec_3 .bottom-part .same-column {
+  background: #ffff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px;
+  width: 280px;
+  position: relative;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+.section-3 .main-wrap-in-sec_3 .bottom-part .same-column .column_icon {
+  display: inline-block;
+  width: 120px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -65px;
+  background: #fff;
+  height: 120px;
+  box-shadow: 0px 10px 10px 0 #dddddd7d;
+  line-height: 120px;
+  text-align: center;
+}
+.section-3 .main-wrap-in-sec_3 .bottom-part .same-column .column_icon img {
+  max-width: 50px;
+}
+.section-3 .main-wrap-in-sec_3 .bottom-part .same-column h3{
+  font-size: 22px;
+  font-weight: 700;
+}
+.section-3 .main-wrap-in-sec_3 .bottom-part .same-column p {
+  font-size: 16px;
+}
+/* SECTION-3 Con Privans Pubblichi, Promuovi, Chatti e Incassi PART FINISH */
+
+/* SECTION-4 Hai Idea di Quanto PART START */
+.section-4{
+  padding: 300px 0;
+  background: url(assets/img/background-2nd-right.png) no-repeat;
+  background-size: 40%;
+  background-position: right top;
+}
+.section-4 .section-4-left-part{}
+.section-4 .section-4-left-part h2{}
+.section-4 .section-4-left-part > p {
+  margin: 30px 0;
+}
+.section-4 .section-4-left-part a{
+  margin-bottom: 100px;
+}
+.section-4 .section-4-left-part .bottom_area{}
+.section-4 .section-4-left-part .bottom_area p {
+  font-size: 12px;
+}
+.section-4 .section-4-left-part .bottom_area img{}
+.section-4 .section-4-right-part{}
+.section-4 .section-4-right-part img{}
+/* SECTION-4 Hai Idea di Quanto PART FINISH */
+
+/* SECTION-5 CONTACT SECTION START  */
+.section-5 {
+  background: url(assets/img/footer.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-bottom: 200px;
+  background-position: left bottom;
+}
+.section-5 .section-5-top-part {
+  margin-bottom: 200px;
+}
+.section-5 .section-5-top-part p.title{}
+.section-5 .section-5-top-part p {
+  margin: 30px 0;
+}
+.section-5 .section-5-top-part a{}
+.section-5 .contact-part {
+  width: 770px;
+  margin: 0 auto;
+}
+.section-5 .contact-part .contact-top{}
+.section-5 .contact-part .contact-top p.title{
+  margin-bottom: 0;
+}
+.section-5 .contact-part .contact-top p{
+  margin-bottom: 50px;
+}
+.section-5 .contact-part form {
+  padding: 50px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0 #ddd;
+}
+::placeholder{
+  color: #DCE0E8 !important;
+}
+input,textarea{
+  border-color: #DCE0E8 !important;
+}
+.section-5 .contact-part form .form-group{}
+.section-5 .contact-part form .form-group input {
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.section-5 .contact-part form .form-group textarea{
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.section-5 .contact-part form input[type='submit']{
+  cursor: pointer;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(to left,#219498,#6B9DC0,#B48DE0);
+}
+/* SECTION-5 CONTACT SECTION FINISH */
+
+/* footer */
+footer{
+  background-color: #282B50;
+  color: #fff;
+  padding: 50px 0;
+}
+footer img{
+  width: 250px;
+}
+footer .right-footer{
+  flex-basis: 50%;
+}
+footer .right-footer p{
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+/* footer */
+
